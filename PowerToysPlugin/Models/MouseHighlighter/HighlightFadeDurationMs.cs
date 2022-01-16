@@ -1,0 +1,10 @@
+﻿using Newtonsoft.Json;
+
+namespace Loupedeck.PowerToysPlugin.Models.MouseHighlighter
+{
+    public class HighlightFadeDurationMs
+    {
+        [JsonProperty("value")]
+        public int Value { get; set; }
+    }
+}

@@ -1,22 +1,22 @@
 ﻿using System.Collections.Generic;
+
 using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.ColorPicker;
+using Loupedeck.PowerToysPlugin.Models.PowerToysRun;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public class ColorPickerService : BaseSettingsService<ColorPickerSettings>
+    public class PowerToysRunService : BaseSettingsService<PowerToysRunSettings>
     {
-        public ColorPickerService()
-            : base("ColorPicker")
+        public PowerToysRunService()
+            : base("PowerToys Run")
         {
-            //"C:\Users\oddbj\AppData\Local\Microsoft\PowerToys\ColorPicker\settings.json" Contains key presses to execute.
-            //"C:\Program Files\PowerToys\modules\ColorPicker\PowerToys.ColorPickerUI.exe"
+            //
         }
 
         public void Activate()
         {
             var settings = GetSettings();
-            var shortcut = settings.Properties.ActivationShortcut;
+            var shortcut = settings.Properties.OpenPowerlauncher;
 
             var keys = new List<byte>();
 

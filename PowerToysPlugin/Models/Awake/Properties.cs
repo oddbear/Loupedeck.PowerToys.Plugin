@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace Loupedeck.PowerToysPlugin.Models
+namespace Loupedeck.PowerToysPlugin.Models.Awake
 {
-    public class AwakeProperties
+    public class Properties
     {
         [JsonProperty("awake_keep_display_on")]
         public bool AwakeKeepDisplayOn { get; set; }
@@ -16,18 +16,4 @@ namespace Loupedeck.PowerToysPlugin.Models
         [JsonProperty("awake_minutes")]
         public int AwakeMinutes { get; set; }
     }
-
-    public class AwakeSettings
-    {
-        [JsonProperty("properties")]
-        public AwakeProperties Properties { get; set; }
-
-        [JsonProperty("name")]
-        public string Name { get; set; }
-
-        [JsonProperty("version")]
-        public string Version { get; set; }
-    }
-
-
 }

@@ -1,16 +1,18 @@
-﻿using Loupedeck.PowerToysPlugin.Models;
+﻿using Loupedeck.PowerToysPlugin.Models.Awake;
 using Loupedeck.PowerToysPlugin.Services;
 
-namespace Loupedeck.PowerToysPlugin.Commands
+namespace Loupedeck.PowerToysPlugin.Commands.Awake
 {
     class AwakeKeepScreenOnToggleCommand : PluginDynamicCommand
     {
         private PowerToysPlugin _plugin;
-        private AwakeService _awakeService;
+        private AwakeService _service;
         private AwakeSettings _currentSettings;
 
         public AwakeKeepScreenOnToggleCommand()
-            : base("Toggle Keep screen on", "Toggles Keep screen on", "Awake")
+            : base("Toggle Keep screen on",
+                "Toggles Keep screen on",
+                "Awake")
         {
             //
         }
@@ -21,12 +23,12 @@ namespace Loupedeck.PowerToysPlugin.Commands
             if (_plugin is null)
                 return false;
 
-            _awakeService = _plugin.AwakeService;
-            if (_awakeService is null)
+            _service = _plugin.AwakeService;
+            if (_service is null)
                 return false;
 
-            _currentSettings = _awakeService.GetSettings();
-            _awakeService.SettingsUpdated += AwakeServiceOnSettingsUpdated;
+            _currentSettings = _service.GetSettings();
+            _service.SettingsUpdated += AwakeServiceOnSettingsUpdated;
 
             return true;
         }
@@ -40,7 +42,7 @@ namespace Loupedeck.PowerToysPlugin.Commands
         protected override void RunCommand(string actionParameter)
         {
             _currentSettings.Properties.AwakeKeepDisplayOn = !_currentSettings.Properties.AwakeKeepDisplayOn;
-            _awakeService.UpdateSettings(_currentSettings);
+            _service.UpdateSettings(_currentSettings);
             base.ActionImageChanged();
         }
         

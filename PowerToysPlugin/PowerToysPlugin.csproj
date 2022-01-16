@@ -52,17 +52,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\AwakeKeepScreenOnToggleCommand.cs" />
-    <Compile Include="Commands\ColorPickerActivateCommand.cs" />
+    <Compile Include="Commands\Awake\AwakeKeepScreenOnToggleCommand.cs" />
+    <Compile Include="Commands\AlwaysOnTop\AlwaysOnTopActivateCommand.cs" />
+    <Compile Include="Commands\MouseHighlighter\MouseHighlighterActivateCommand.cs" />
+    <Compile Include="Commands\PowerToysRun\PowerToysRunActivateCommand.cs" />
+    <Compile Include="Commands\ColorPicker\ColorPickerActivateCommand.cs" />
     <Compile Include="Helpers\KeyboardHelper.cs" />
-    <Compile Include="Models\AwakeSettings.cs" />
-    <Compile Include="Models\ColorPickerSettings.cs" />
+    <Compile Include="Models\AlwaysOnTop\AlwaysOnTopSettings.cs" />
+    <Compile Include="Models\AlwaysOnTop\DoNotActivateOnGameMode.cs" />
+    <Compile Include="Models\AlwaysOnTop\ExcludedApps.cs" />
+    <Compile Include="Models\AlwaysOnTop\FrameColor.cs" />
+    <Compile Include="Models\AlwaysOnTop\FrameEnabled.cs" />
+    <Compile Include="Models\AlwaysOnTop\FrameThickness.cs" />
+    <Compile Include="Models\AlwaysOnTop\Hotkey.cs" />
+    <Compile Include="Models\AlwaysOnTop\Properties.cs" />
+    <Compile Include="Models\AlwaysOnTop\SoundEnabled.cs" />
+    <Compile Include="Models\AlwaysOnTop\Value.cs" />
+    <Compile Include="Models\Awake\AwakeSettings.cs" />
+    <Compile Include="Models\Awake\Properties.cs" />
+    <Compile Include="Models\ColorPicker\ActivationShortcut.cs" />
+    <Compile Include="Models\ColorPicker\Changecursor.cs" />
+    <Compile Include="Models\ColorPicker\ColorPickerSettings.cs" />
+    <Compile Include="Models\ColorPicker\Properties.cs" />
+    <Compile Include="Models\ColorPicker\Showcolorname.cs" />
+    <Compile Include="Models\ColorPicker\Visiblecolorformats.cs" />
+    <Compile Include="Models\MouseHighlighter\ActivationShortcut.cs" />
+    <Compile Include="Models\MouseHighlighter\HighlightFadeDelayMs.cs" />
+    <Compile Include="Models\MouseHighlighter\HighlightFadeDurationMs.cs" />
+    <Compile Include="Models\MouseHighlighter\HighlightOpacity.cs" />
+    <Compile Include="Models\MouseHighlighter\HighlightRadius.cs" />
+    <Compile Include="Models\MouseHighlighter\LeftButtonClickColor.cs" />
+    <Compile Include="Models\MouseHighlighter\MouseHighlighterSettings.cs" />
+    <Compile Include="Models\MouseHighlighter\Properties.cs" />
+    <Compile Include="Models\MouseHighlighter\RightButtonClickColor.cs" />
+    <Compile Include="Models\PowerToysRun\AdditionalOption.cs" />
+    <Compile Include="Models\PowerToysRun\CopyPathLocation.cs" />
+    <Compile Include="Models\PowerToysRun\OpenConsole.cs" />
+    <Compile Include="Models\PowerToysRun\OpenFileLocation.cs" />
+    <Compile Include="Models\PowerToysRun\OpenPowerlauncher.cs" />
+    <Compile Include="Models\PowerToysRun\Plugin.cs" />
+    <Compile Include="Models\PowerToysRun\PowerToysRunSettings.cs" />
+    <Compile Include="Models\PowerToysRun\Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PowerToysApplication.cs" />
     <Compile Include="PowerToysPlugin.cs" />
+    <Compile Include="Services\AlwaysOnTopService.cs" />
     <Compile Include="Services\AwakeService.cs" />
     <Compile Include="Services\BaseSettingsService.cs" />
     <Compile Include="Services\ColorPickerService.cs" />
+    <Compile Include="Services\MouseHighlighterService.cs" />
+    <Compile Include="Services\PowerToysRunService.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />
@@ -70,6 +109,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\icon-16.png" />
+    <EmbeddedResource Include="Resources\Icons\icon-256.png" />
+    <EmbeddedResource Include="Resources\Icons\icon-32.png" />
+    <EmbeddedResource Include="Resources\Icons\icon-48.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

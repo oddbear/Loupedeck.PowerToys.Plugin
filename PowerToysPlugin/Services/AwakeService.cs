@@ -1,4 +1,4 @@
-﻿using Loupedeck.PowerToysPlugin.Models;
+﻿using Loupedeck.PowerToysPlugin.Models.Awake;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {

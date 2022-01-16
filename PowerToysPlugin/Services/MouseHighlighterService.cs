@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
+
 using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.ColorPicker;
+using Loupedeck.PowerToysPlugin.Models.MouseHighlighter;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public class ColorPickerService : BaseSettingsService<ColorPickerSettings>
+    public class MouseHighlighterService : BaseSettingsService<MouseHighlighterSettings>
     {
-        public ColorPickerService()
-            : base("ColorPicker")
+        public MouseHighlighterService()
+            : base("MouseHighlighter")
         {
-            //"C:\Users\oddbj\AppData\Local\Microsoft\PowerToys\ColorPicker\settings.json" Contains key presses to execute.
-            //"C:\Program Files\PowerToys\modules\ColorPicker\PowerToys.ColorPickerUI.exe"
+            //
         }
 
         public void Activate()

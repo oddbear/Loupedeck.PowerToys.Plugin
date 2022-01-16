@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="256mm"
+   height="256mm"
+   viewBox="0 0 256 256"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="Icon.svg"
+   inkscape:export-filename="C:\Users\oddbj\Documents\git\Loupedeck.PowerToys.Plugin\PowerToysPlugin\Resources\Icons\icon-16.png"
+   inkscape:export-xdpi="1.5875"
+   inkscape:export-ydpi="1.5875"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.0998546"
+     inkscape:cx="467.3345"
+     inkscape:cy="469.60753"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="1432"
+     inkscape:window-y="638"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true"
+     units="mm">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1871" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient1556"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1554" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:14.5521;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect850"
+       width="241.07137"
+       height="241.13168"
+       x="7.4563756"
+       y="7.3962355"
+       ry="0.48112419"
+       rx="0" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:14.5521;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1138"
+       width="169.33229"
+       height="110.88445"
+       x="43.05537"
+       y="37.041668"
+       ry="1.5530231"
+       inkscape:export-filename="C:\Users\oddbj\Documents\git\Loupedeck.PowerToys.Plugin\PowerToysPlugin\Resources\Icons\icon-256.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:10.655"
+       id="rect1140-2"
+       width="43.546383"
+       height="44.226807"
+       x="177.22812"
+       y="176.51001"
+       ry="6.1237016" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:10.655"
+       id="rect1140-2-9"
+       width="43.546383"
+       height="44.226807"
+       x="36.024521"
+       y="176.3399"
+       ry="6.1237016" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:10.655"
+       id="rect1140-2-5"
+       width="43.546383"
+       height="44.226807"
+       x="106.40913"
+       y="176.3399"
+       ry="6.1237016" />
+  </g>
+</svg>
