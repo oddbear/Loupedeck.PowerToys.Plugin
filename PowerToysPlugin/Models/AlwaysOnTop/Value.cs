@@ -2,7 +2,7 @@
 
 namespace Loupedeck.PowerToysPlugin.Models.AlwaysOnTop
 {
-    public class Value
+    public class Value : IKeyboardShortcut
     {
         [JsonProperty("win")]
         public bool Win { get; set; }

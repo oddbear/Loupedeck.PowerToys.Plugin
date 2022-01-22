@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="Cup" transform="matrix(1.05264,0,0,1.05264,-18.4719,0.40665)">
+        <path id="Handle" d="M208.341,77.461C208.341,77.461 240.146,74.113 230.939,100.338C221.732,126.563 193.276,117.914 193.276,117.914" style="fill:none;stroke:white;stroke-width:9.22px;"/>
+        <path id="Body-off" d="M49.872,59.927C49.872,59.927 49.824,149.874 129.818,149.832C210.053,149.789 210.094,60.14 210.094,60.14L49.872,59.927Z" style="fill:none;stroke:white;stroke-width:7.46px;"/>
+        <path id="Foot" d="M59.939,150.145L200.069,150.098" style="fill:none;stroke:white;stroke-width:9.22px;"/>
+    </g>
+</svg>

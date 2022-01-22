@@ -2,7 +2,7 @@
 
 namespace Loupedeck.PowerToysPlugin.Models.PowerToysRun
 {
-    public class OpenPowerlauncher
+    public class OpenPowerlauncher : IKeyboardShortcut
     {
         [JsonProperty("win")]
         public bool Win { get; set; }

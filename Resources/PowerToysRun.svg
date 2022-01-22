@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="Magnifier" transform="matrix(1,0,0,1,10.9364,0)">
+        <g id="Glass" transform="matrix(0.912639,0,0,0.98004,47.4779,-31.3024)">
+            <ellipse cx="123.201" cy="109.029" rx="60.038" ry="55.909" style="fill:none;stroke:white;stroke-width:8.34px;"/>
+        </g>
+        <g id="Handle" transform="matrix(0.530184,-0.530184,0.707107,0.707107,-82.9903,85.7839)">
+            <path d="M165.384,163.264C165.384,159.63 161.45,156.68 156.603,156.68L43.599,156.68C38.753,156.68 34.818,159.63 34.818,163.264C34.818,166.898 38.753,169.848 43.599,169.848L156.603,169.848C161.45,169.848 165.384,166.898 165.384,163.264Z" style="fill:none;stroke:white;stroke-width:8.94px;"/>
+        </g>
+    </g>
+</svg>

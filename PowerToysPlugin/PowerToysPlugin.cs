@@ -7,8 +7,12 @@ namespace Loupedeck.PowerToysPlugin
         public AlwaysOnTopService AlwaysOnTopService { get; }
         public AwakeService AwakeService { get; }
         public ColorPickerService ColorPickerService { get; }
+        public FancyZonesService FancyZonesService { get; }
+        public KeyboardManagerService KeyboardManagerService { get; }
         public MouseHighlighterService MouseHighlighterService { get; }
         public PowerToysRunService PowerToysRunService { get; }
+        public ShortcutGuideService ShortcutGuideService { get; }
+        public VideoConferenceService VideoConferenceService { get; }
 
         public override bool HasNoApplication => true;
         public override bool UsesApplicationApiOnly => true;
@@ -18,8 +22,12 @@ namespace Loupedeck.PowerToysPlugin
             AlwaysOnTopService = new AlwaysOnTopService();
             AwakeService = new AwakeService();
             ColorPickerService = new ColorPickerService();
+            FancyZonesService = new FancyZonesService();
+            KeyboardManagerService = new KeyboardManagerService();
             MouseHighlighterService = new MouseHighlighterService();
             PowerToysRunService = new PowerToysRunService();
+            ShortcutGuideService = new ShortcutGuideService();
+            VideoConferenceService = new VideoConferenceService();
         }
 
         public override void Load()
@@ -32,8 +40,12 @@ namespace Loupedeck.PowerToysPlugin
             AlwaysOnTopService.Dispose();
             AwakeService.Dispose();
             ColorPickerService.Dispose();
+            FancyZonesService.Dispose();
+            KeyboardManagerService.Dispose();
             MouseHighlighterService.Dispose();
             PowerToysRunService.Dispose();
+            ShortcutGuideService.Dispose();
+            VideoConferenceService.Dispose();
         }
         
         public override void RunCommand(string commandName, string parameter)

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="Click">
+        <path id="On" d="M117.834,133.656C115.443,133.922 113.013,134.06 110.549,134.06C75.688,134.06 47.386,106.607 47.386,72.794C47.386,38.98 75.688,11.528 110.549,11.528C145.41,11.528 173.712,38.98 173.712,72.794C173.712,84.143 170.524,94.776 164.969,103.894L106.136,71.931L117.834,133.656Z" style="fill:rgb(74,74,74);"/>
+        <g id="Border" transform="matrix(1,0,0,1,-0.697472,-4.8823)">
+            <path d="M118.531,138.538C116.141,138.805 113.71,138.942 111.247,138.942C76.386,138.942 48.084,111.49 48.084,77.676C48.084,43.862 76.386,16.41 111.247,16.41C146.107,16.41 174.41,43.862 174.41,77.676C174.41,89.025 171.221,99.658 165.667,108.776" style="fill:none;stroke:white;stroke-width:7.9px;"/>
+        </g>
+    </g>
+    <g transform="matrix(0.793958,-0.607973,0.607973,0.793958,-38.3257,93.2035)">
+        <g id="Mouse">
+            <path d="M127.777,69.412L159.358,138.378L139.15,131.254L138.318,190.002C138.318,190.002 138.456,195.513 136.766,196.752C135.077,197.992 128.183,197.438 128.183,197.438C128.183,197.438 122.014,197.328 120.519,196.104C119.024,194.879 119.212,190.089 119.212,190.089L118.946,130.93L96.195,138.378L127.777,69.412Z" style="fill:none;stroke:white;stroke-width:7.9px;"/>
+        </g>
+    </g>
+</svg>

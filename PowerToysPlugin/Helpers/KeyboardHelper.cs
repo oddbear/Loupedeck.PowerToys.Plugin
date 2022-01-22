@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
+using Loupedeck.PowerToysPlugin.Models;
+
 namespace Loupedeck.PowerToysPlugin.Helpers
 {
     public static class KeyboardHelper
@@ -17,7 +19,31 @@ namespace Loupedeck.PowerToysPlugin.Helpers
         [DllImport("user32.dll")]
         static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, UIntPtr dwExtraInfo);
 
-        public static void SendKeys(IReadOnlyCollection<byte> keys)
+        public static void SendKeys(IKeyboardShortcut shortcut)
+        {
+            if (shortcut is null)
+                return;
+            
+            var keys = new List<byte>();
+
+            if (shortcut.Win)
+                keys.Add(KeyboardHelper.LeftWin);
+
+            if (shortcut.Alt)
+                keys.Add(KeyboardHelper.Alt);
+
+            if (shortcut.Shift)
+                keys.Add(KeyboardHelper.LeftShift);
+
+            if (shortcut.Ctrl)
+                keys.Add(KeyboardHelper.Ctrl);
+
+            keys.Add((byte)shortcut.Code); //Ex. 0x43 -> 67 -> C
+
+            SendKeys(keys);
+        }
+
+        private static void SendKeys(IReadOnlyCollection<byte> keys)
         {
             //Set keys:
             foreach (var key in keys)

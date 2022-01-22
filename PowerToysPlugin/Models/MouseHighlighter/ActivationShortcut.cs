@@ -2,7 +2,7 @@
 
 namespace Loupedeck.PowerToysPlugin.Models.MouseHighlighter
 {
-    public class ActivationShortcut
+    public class ActivationShortcut : IKeyboardShortcut
     {
         [JsonProperty("win")]
         public bool Win { get; set; }

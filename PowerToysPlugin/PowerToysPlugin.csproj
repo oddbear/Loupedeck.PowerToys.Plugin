@@ -54,10 +54,15 @@
   <ItemGroup>
     <Compile Include="Commands\Awake\AwakeKeepScreenOnToggleCommand.cs" />
     <Compile Include="Commands\AlwaysOnTop\AlwaysOnTopActivateCommand.cs" />
+    <Compile Include="Commands\FancyZones\FancyZonesActivateCommand.cs" />
     <Compile Include="Commands\MouseHighlighter\MouseHighlighterActivateCommand.cs" />
     <Compile Include="Commands\PowerToysRun\PowerToysRunActivateCommand.cs" />
     <Compile Include="Commands\ColorPicker\ColorPickerActivateCommand.cs" />
+    <Compile Include="Commands\ShortcutGuide\ShortcutGuideActivateCommand.cs" />
     <Compile Include="Helpers\KeyboardHelper.cs" />
+    <Compile Include="Helpers\LogAnalyzerHelper.cs" />
+    <Compile Include="Helpers\ProcessHelper.cs" />
+    <Compile Include="Helpers\ResourceHelper.cs" />
     <Compile Include="Models\AlwaysOnTop\AlwaysOnTopSettings.cs" />
     <Compile Include="Models\AlwaysOnTop\DoNotActivateOnGameMode.cs" />
     <Compile Include="Models\AlwaysOnTop\ExcludedApps.cs" />
@@ -76,6 +81,43 @@
     <Compile Include="Models\ColorPicker\Properties.cs" />
     <Compile Include="Models\ColorPicker\Showcolorname.cs" />
     <Compile Include="Models\ColorPicker\Visiblecolorformats.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesShiftDrag.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesAppLastZoneMoveWindows.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesDisplayChangeMoveWindows.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesEditorHotkey.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesExcludedApps.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesFlashZonesOnQuickSwitch.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesHighlightOpacity.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesMakeDraggedWindowTransparent.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesMouseSwitch.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesMoveWindowAcrossMonitors.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesMoveWindowsBasedOnPosition.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesNextTabHotkey.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesOpenWindowOnActiveMonitor.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesOverlappingZonesAlgorithm.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesOverrideSnapHotkeys.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesPrevTabHotkey.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesQuickLayoutSwitch.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesRestoreSize.cs" />
+    <Compile Include="Models\FancyZones\FancyZonesSettings.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesShowOnAllMonitors.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesShowZoneNumber.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesSpanZonesAcrossMonitors.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesSystemTheme.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesWindowSwitching.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesZoneBorderColor.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesZoneColor.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesZoneHighlightColor.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesZoneNumberColor.cs" />
+    <Compile Include="Models\FancyZones\FancyzonesZoneSetChangeMoveWindows.cs" />
+    <Compile Include="Models\FancyZones\Properties.cs" />
+    <Compile Include="Models\FancyZones\UseCursorposEditorStartupscreen.cs" />
+    <Compile Include="Models\FancyZones\Value.cs" />
+    <Compile Include="Models\IKeyboardShortcut.cs" />
+    <Compile Include="Models\KeyboardManager\ActiveConfiguration.cs" />
+    <Compile Include="Models\KeyboardManager\KeyboardConfigurations.cs" />
+    <Compile Include="Models\KeyboardManager\KeyboardManagerSettings.cs" />
+    <Compile Include="Models\KeyboardManager\Properties.cs" />
     <Compile Include="Models\MouseHighlighter\ActivationShortcut.cs" />
     <Compile Include="Models\MouseHighlighter\HighlightFadeDelayMs.cs" />
     <Compile Include="Models\MouseHighlighter\HighlightFadeDurationMs.cs" />
@@ -93,6 +135,26 @@
     <Compile Include="Models\PowerToysRun\Plugin.cs" />
     <Compile Include="Models\PowerToysRun\PowerToysRunSettings.cs" />
     <Compile Include="Models\PowerToysRun\Properties.cs" />
+    <Compile Include="Models\ShortcutGuide\OpenShortcutguide.cs" />
+    <Compile Include="Models\ShortcutGuide\DisabledApps.cs" />
+    <Compile Include="Models\ShortcutGuide\OverlayOpacity.cs" />
+    <Compile Include="Models\ShortcutGuide\PressTime.cs" />
+    <Compile Include="Models\ShortcutGuide\Properties.cs" />
+    <Compile Include="Models\ShortcutGuide\ShortcutGuideSettings.cs" />
+    <Compile Include="Models\ShortcutGuide\Theme.cs" />
+    <Compile Include="Models\ShortcutGuide\UseLegacyPressWinKeyBehavior.cs" />
+    <Compile Include="Models\VideoConference\CameraOverlayImagePath.cs" />
+    <Compile Include="Models\VideoConference\Value.cs" />
+    <Compile Include="Models\VideoConference\HideToolbarWhenUnmuted.cs" />
+    <Compile Include="Models\VideoConference\MuteCameraAndMicrophoneHotkey.cs" />
+    <Compile Include="Models\VideoConference\MuteCameraHotkey.cs" />
+    <Compile Include="Models\VideoConference\MuteMicrophoneHotkey.cs" />
+    <Compile Include="Models\VideoConference\Properties.cs" />
+    <Compile Include="Models\VideoConference\SelectedCamera.cs" />
+    <Compile Include="Models\VideoConference\SelectedMic.cs" />
+    <Compile Include="Models\VideoConference\ToolbarMonitor.cs" />
+    <Compile Include="Models\VideoConference\ToolbarPosition.cs" />
+    <Compile Include="Models\VideoConference\VideoConferenceSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PowerToysApplication.cs" />
     <Compile Include="PowerToysPlugin.cs" />
@@ -100,8 +162,12 @@
     <Compile Include="Services\AwakeService.cs" />
     <Compile Include="Services\BaseSettingsService.cs" />
     <Compile Include="Services\ColorPickerService.cs" />
+    <Compile Include="Services\FancyZonesService.cs" />
+    <Compile Include="Services\KeyboardManagerService.cs" />
     <Compile Include="Services\MouseHighlighterService.cs" />
     <Compile Include="Services\PowerToysRunService.cs" />
+    <Compile Include="Services\ShortcutGuideService.cs" />
+    <Compile Include="Services\VideoConferenceService.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />
@@ -116,6 +182,48 @@
     <EmbeddedResource Include="Resources\Icons\icon-32.png" />
     <EmbeddedResource Include="Resources\Icons\icon-48.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Commands\KeyboardManager\" />
+    <Folder Include="Commands\VideoConference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Modules\Awake\off-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Modules\Awake\on-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Modules\PowerToysRun\icon-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Modules\AlwaysOnTop\icon-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Modules\ColorPicker\icon-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Modules\FancyZones\off-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Modules\FancyZones\on-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Modules\KeyboardManager\icon-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Modules\MouseHighlighter\icon-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Modules\ShortcutGuide\icon-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Modules\VideoConference\icon-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
