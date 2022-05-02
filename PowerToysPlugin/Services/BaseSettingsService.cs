@@ -21,6 +21,7 @@ namespace Loupedeck.PowerToysPlugin.Services
             var fileName = Path.GetFileName(location);
 
             _watcher = new FileSystemWatcher(directory, fileName);
+            _watcher.EnableRaisingEvents = true;
             _watcher.Changed += WatcherOnChanged;
         }
 

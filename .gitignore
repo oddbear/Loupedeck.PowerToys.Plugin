@@ -309,3 +309,7 @@ testem.log
 *.xcactivitylog
 
 *.DotSettings
+
+#Raw image resources
+*.afphoto
+*.afdesign

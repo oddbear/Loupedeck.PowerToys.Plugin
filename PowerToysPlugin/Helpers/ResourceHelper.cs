@@ -15,7 +15,7 @@ namespace Loupedeck.PowerToysPlugin.Helpers
 
                 var bytes = File.ReadAllBytes(diskPath);
 
-                return new BitmapImage(bytes);
+                return BitmapImage.FromArray(bytes);
             }
             catch
             {
