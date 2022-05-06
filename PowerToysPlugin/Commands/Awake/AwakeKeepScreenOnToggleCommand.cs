@@ -42,6 +42,9 @@ namespace Loupedeck.PowerToysPlugin.Commands.Awake
         
         protected override void RunCommand(string actionParameter)
         {
+            if (_currentSettings is null)
+                return;
+
             _currentSettings.Properties.AwakeKeepDisplayOn = !_currentSettings.Properties.AwakeKeepDisplayOn;
             _service.UpdateSettings(_currentSettings);
             base.ActionImageChanged();
@@ -49,6 +52,9 @@ namespace Loupedeck.PowerToysPlugin.Commands.Awake
 
         protected override BitmapImage GetCommandImage(string actionParameter, PluginImageSize imageSize)
         {
+            if (_currentSettings is null)
+                return null;
+
             using (var bitmapBuilder = new BitmapBuilder(imageSize))
             {
                 bitmapBuilder.Clear(new BitmapColor(0x00, 0x19, 0x7C));

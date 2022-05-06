@@ -15,12 +15,17 @@ namespace Loupedeck.PowerToysPlugin.Services
         public void Activate(MuteOptions muteOptions)
         {
             var shortcut = GetMuteShortcuts(muteOptions);
+            if (shortcut is null)
+                return;
+            
             KeyboardHelper.SendKeys(shortcut);
         }
 
         private IKeyboardShortcut GetMuteShortcuts(MuteOptions muteOptions)
         {
             var settings = GetSettings();
+            if (settings == null)
+                return null;
 
             switch (muteOptions)
             {
