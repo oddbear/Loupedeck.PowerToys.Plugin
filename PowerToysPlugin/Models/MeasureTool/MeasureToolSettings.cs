@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace Loupedeck.PowerToysPlugin.Models.Awake
+namespace Loupedeck.PowerToysPlugin.Models.MeasureTool
 {
-    public class AwakeSettings
+    public class MeasureToolSettings
     {
         [JsonProperty("properties")]
         public Properties Properties { get; set; }

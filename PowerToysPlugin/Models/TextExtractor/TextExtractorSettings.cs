@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace Loupedeck.PowerToysPlugin.Models.Awake
+namespace Loupedeck.PowerToysPlugin.Models.TextExtractor
 {
-    public class AwakeSettings
+    public class TextExtractorSettings
     {
         [JsonProperty("properties")]
         public Properties Properties { get; set; }

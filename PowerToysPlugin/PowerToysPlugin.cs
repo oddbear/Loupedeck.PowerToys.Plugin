@@ -13,6 +13,8 @@ namespace Loupedeck.PowerToysPlugin
         public PowerToysRunService PowerToysRunService { get; }
         public ShortcutGuideService ShortcutGuideService { get; }
         public VideoConferenceService VideoConferenceService { get; }
+        public MeasureToolService MeasureToolService { get; }
+        public TextExtractorService TextExtractorService { get; }
 
         public override bool HasNoApplication => true;
         public override bool UsesApplicationApiOnly => true;
@@ -28,6 +30,8 @@ namespace Loupedeck.PowerToysPlugin
             PowerToysRunService = new PowerToysRunService();
             ShortcutGuideService = new ShortcutGuideService();
             VideoConferenceService = new VideoConferenceService();
+            MeasureToolService = new MeasureToolService();
+            TextExtractorService = new TextExtractorService();
         }
 
         public override void Load()
@@ -46,6 +50,7 @@ namespace Loupedeck.PowerToysPlugin
             PowerToysRunService.Dispose();
             ShortcutGuideService.Dispose();
             VideoConferenceService.Dispose();
+            MeasureToolService.Dispose();
         }
         
         public override void RunCommand(string commandName, string parameter)

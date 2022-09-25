@@ -33,6 +33,8 @@ namespace Loupedeck.PowerToysPlugin.Services
                     return settings.Properties.MuteCameraHotkey.Value;
                 case MuteOptions.Microphone:
                     return settings.Properties.MuteMicrophoneHotkey.Value;
+                case MuteOptions.CameraMicrophone:
+                    return settings.Properties.MuteCameraAndMicrophoneHotkey.Value;
                 default:
                     return settings.Properties.MuteCameraAndMicrophoneHotkey.Value;
             }
@@ -42,6 +44,7 @@ namespace Loupedeck.PowerToysPlugin.Services
     public enum MuteOptions
     {
         Camera,
-        Microphone
+        Microphone,
+        CameraMicrophone
     }
 }

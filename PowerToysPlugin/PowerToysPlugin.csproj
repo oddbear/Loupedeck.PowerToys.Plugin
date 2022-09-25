@@ -56,10 +56,15 @@
     <Compile Include="Commands\Awake\AwakeKeepScreenOnToggleCommand.cs" />
     <Compile Include="Commands\AlwaysOnTop\AlwaysOnTopActivateCommand.cs" />
     <Compile Include="Commands\FancyZones\FancyZonesActivateCommand.cs" />
+    <Compile Include="Commands\MeasureTool\MeasureToolCommand.cs" />
     <Compile Include="Commands\MouseHighlighter\MouseHighlighterActivateCommand.cs" />
     <Compile Include="Commands\PowerToysRun\PowerToysRunActivateCommand.cs" />
     <Compile Include="Commands\ColorPicker\ColorPickerActivateCommand.cs" />
     <Compile Include="Commands\ShortcutGuide\ShortcutGuideActivateCommand.cs" />
+    <Compile Include="Commands\TextExtractor\TextExtractorCommand.cs" />
+    <Compile Include="Commands\VideoConference\MuteCameraAndMicrophoneCommand.cs" />
+    <Compile Include="Commands\VideoConference\MuteCameraCommand.cs" />
+    <Compile Include="Commands\VideoConference\MuteMicrophoneCommand.cs" />
     <Compile Include="Helpers\KeyboardHelper.cs" />
     <Compile Include="Helpers\LogAnalyzerHelper.cs" />
     <Compile Include="Helpers\ProcessHelper.cs" />
@@ -119,6 +124,12 @@
     <Compile Include="Models\KeyboardManager\KeyboardConfigurations.cs" />
     <Compile Include="Models\KeyboardManager\KeyboardManagerSettings.cs" />
     <Compile Include="Models\KeyboardManager\Properties.cs" />
+    <Compile Include="Models\MeasureTool\ActivationShortcut.cs" />
+    <Compile Include="Models\MeasureTool\BoolValue.cs" />
+    <Compile Include="Models\MeasureTool\IntValue.cs" />
+    <Compile Include="Models\MeasureTool\MeasureToolSettings.cs" />
+    <Compile Include="Models\MeasureTool\Properties.cs" />
+    <Compile Include="Models\MeasureTool\StringValue.cs" />
     <Compile Include="Models\MouseHighlighter\ActivationShortcut.cs" />
     <Compile Include="Models\MouseHighlighter\HighlightFadeDelayMs.cs" />
     <Compile Include="Models\MouseHighlighter\HighlightFadeDurationMs.cs" />
@@ -144,6 +155,9 @@
     <Compile Include="Models\ShortcutGuide\ShortcutGuideSettings.cs" />
     <Compile Include="Models\ShortcutGuide\Theme.cs" />
     <Compile Include="Models\ShortcutGuide\UseLegacyPressWinKeyBehavior.cs" />
+    <Compile Include="Models\TextExtractor\ActivationShortcut.cs" />
+    <Compile Include="Models\TextExtractor\Properties.cs" />
+    <Compile Include="Models\TextExtractor\TextExtractorSettings.cs" />
     <Compile Include="Models\VideoConference\CameraOverlayImagePath.cs" />
     <Compile Include="Models\VideoConference\Value.cs" />
     <Compile Include="Models\VideoConference\HideToolbarWhenUnmuted.cs" />
@@ -165,9 +179,11 @@
     <Compile Include="Services\ColorPickerService.cs" />
     <Compile Include="Services\FancyZonesService.cs" />
     <Compile Include="Services\KeyboardManagerService.cs" />
+    <Compile Include="Services\MeasureToolService.cs" />
     <Compile Include="Services\MouseHighlighterService.cs" />
     <Compile Include="Services\PowerToysRunService.cs" />
     <Compile Include="Services\ShortcutGuideService.cs" />
+    <Compile Include="Services\TextExtractorService.cs" />
     <Compile Include="Services\VideoConferenceService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -185,7 +201,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\KeyboardManager\" />
-    <Folder Include="Commands\VideoConference\" />
+    <Folder Include="Commands\QuickAccent\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Modules\Awake\off-80.png">
