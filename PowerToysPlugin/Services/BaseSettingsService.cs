@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 
 using Newtonsoft.Json;
@@ -10,6 +11,7 @@ namespace Loupedeck.PowerToysPlugin.Services
     {
         private readonly string _pathName;
         private readonly FileSystemWatcher _watcher;
+        private readonly JsonSerializerSettings _serializerSettings;
 
         public event EventHandler<TSettingsModel> SettingsUpdated;
 
@@ -26,25 +28,38 @@ namespace Loupedeck.PowerToysPlugin.Services
                 _watcher = new FileSystemWatcher(directory, fileName);
                 _watcher.EnableRaisingEvents = true;
                 _watcher.Changed += WatcherOnChanged;
+
+                _serializerSettings = new JsonSerializerSettings { Error = HandleDeserializationError };
             }
             catch
             {
                 // If the watcher fails... don't take down Loupedeck.
             }
         }
-
+        
         public TSettingsModel GetSettings()
         {
             try
             {
                 var json = GetSettingsString();
-                return JsonConvert.DeserializeObject<TSettingsModel>(json);
+                return JsonConvert.DeserializeObject<TSettingsModel>(json, _serializerSettings);
             }
-            catch
+            catch (Exception exception)
             {
+                Trace.TraceError(exception.Message);
                 return default;
             }
         }
+
+
+        private void HandleDeserializationError(object sender, Newtonsoft.Json.Serialization.ErrorEventArgs errorArgs)
+        {
+            var currentError = errorArgs.ErrorContext.Error.Message;
+            Trace.TraceError(currentError);
+
+            errorArgs.ErrorContext.Handled = true;
+        }
+
 
         public void UpdateSettings(TSettingsModel settings)
         {

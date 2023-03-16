@@ -12,7 +12,10 @@ namespace Loupedeck.PowerToysPlugin
         public MouseHighlighterService MouseHighlighterService { get; }
         public PowerToysRunService PowerToysRunService { get; }
         public ShortcutGuideService ShortcutGuideService { get; }
+#if DEBUG
+        //TODO: Just for testing, marked as deprecated in PowerToys.
         public VideoConferenceService VideoConferenceService { get; }
+#endif
         public MeasureToolService MeasureToolService { get; }
         public TextExtractorService TextExtractorService { get; }
 
@@ -29,7 +32,9 @@ namespace Loupedeck.PowerToysPlugin
             MouseHighlighterService = new MouseHighlighterService();
             PowerToysRunService = new PowerToysRunService();
             ShortcutGuideService = new ShortcutGuideService();
+#if DEBUG
             VideoConferenceService = new VideoConferenceService();
+#endif
             MeasureToolService = new MeasureToolService();
             TextExtractorService = new TextExtractorService();
         }
@@ -49,7 +54,9 @@ namespace Loupedeck.PowerToysPlugin
             MouseHighlighterService.Dispose();
             PowerToysRunService.Dispose();
             ShortcutGuideService.Dispose();
+#if DEBUG
             VideoConferenceService.Dispose();
+#endif
             MeasureToolService.Dispose();
         }
         
