@@ -58,6 +58,7 @@
     <Compile Include="Commands\FancyZones\FancyZonesActivateCommand.cs" />
     <Compile Include="Commands\MeasureTool\MeasureToolCommand.cs" />
     <Compile Include="Commands\MouseHighlighter\MouseHighlighterActivateCommand.cs" />
+    <Compile Include="Commands\PastePlain\PastePlainCommand.cs" />
     <Compile Include="Commands\PowerToysRun\PowerToysRunActivateCommand.cs" />
     <Compile Include="Commands\ColorPicker\ColorPickerActivateCommand.cs" />
     <Compile Include="Commands\ShortcutGuide\ShortcutGuideActivateCommand.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Helpers\LogAnalyzerHelper.cs" />
     <Compile Include="Helpers\ProcessHelper.cs" />
     <Compile Include="Helpers\ResourceHelper.cs" />
+    <Compile Include="Models\ActivationShortcut.cs" />
     <Compile Include="Models\AlwaysOnTop\AlwaysOnTopSettings.cs" />
     <Compile Include="Models\AlwaysOnTop\DoNotActivateOnGameMode.cs" />
     <Compile Include="Models\AlwaysOnTop\ExcludedApps.cs" />
@@ -81,7 +83,6 @@
     <Compile Include="Models\AlwaysOnTop\Value.cs" />
     <Compile Include="Models\Awake\AwakeSettings.cs" />
     <Compile Include="Models\Awake\Properties.cs" />
-    <Compile Include="Models\ColorPicker\ActivationShortcut.cs" />
     <Compile Include="Models\ColorPicker\Changecursor.cs" />
     <Compile Include="Models\ColorPicker\ColorPickerSettings.cs" />
     <Compile Include="Models\ColorPicker\Properties.cs" />
@@ -120,17 +121,11 @@
     <Compile Include="Models\FancyZones\UseCursorposEditorStartupscreen.cs" />
     <Compile Include="Models\FancyZones\Value.cs" />
     <Compile Include="Models\IKeyboardShortcut.cs" />
-    <Compile Include="Models\KeyboardManager\ActiveConfiguration.cs" />
-    <Compile Include="Models\KeyboardManager\KeyboardConfigurations.cs" />
-    <Compile Include="Models\KeyboardManager\KeyboardManagerSettings.cs" />
-    <Compile Include="Models\KeyboardManager\Properties.cs" />
-    <Compile Include="Models\MeasureTool\ActivationShortcut.cs" />
     <Compile Include="Models\MeasureTool\BoolValue.cs" />
     <Compile Include="Models\MeasureTool\IntValue.cs" />
     <Compile Include="Models\MeasureTool\MeasureToolSettings.cs" />
     <Compile Include="Models\MeasureTool\Properties.cs" />
     <Compile Include="Models\MeasureTool\StringValue.cs" />
-    <Compile Include="Models\MouseHighlighter\ActivationShortcut.cs" />
     <Compile Include="Models\MouseHighlighter\HighlightFadeDelayMs.cs" />
     <Compile Include="Models\MouseHighlighter\HighlightFadeDurationMs.cs" />
     <Compile Include="Models\MouseHighlighter\HighlightOpacity.cs" />
@@ -139,6 +134,8 @@
     <Compile Include="Models\MouseHighlighter\MouseHighlighterSettings.cs" />
     <Compile Include="Models\MouseHighlighter\Properties.cs" />
     <Compile Include="Models\MouseHighlighter\RightButtonClickColor.cs" />
+    <Compile Include="Models\PastePlain\Properties.cs" />
+    <Compile Include="Models\PastePlain\PastePlainSettings.cs" />
     <Compile Include="Models\PowerToysRun\AdditionalOption.cs" />
     <Compile Include="Models\PowerToysRun\CopyPathLocation.cs" />
     <Compile Include="Models\PowerToysRun\OpenConsole.cs" />
@@ -155,7 +152,6 @@
     <Compile Include="Models\ShortcutGuide\ShortcutGuideSettings.cs" />
     <Compile Include="Models\ShortcutGuide\Theme.cs" />
     <Compile Include="Models\ShortcutGuide\UseLegacyPressWinKeyBehavior.cs" />
-    <Compile Include="Models\TextExtractor\ActivationShortcut.cs" />
     <Compile Include="Models\TextExtractor\Properties.cs" />
     <Compile Include="Models\TextExtractor\TextExtractorSettings.cs" />
     <Compile Include="Models\VideoConference\CameraOverlayImagePath.cs" />
@@ -178,9 +174,9 @@
     <Compile Include="Services\BaseSettingsService.cs" />
     <Compile Include="Services\ColorPickerService.cs" />
     <Compile Include="Services\FancyZonesService.cs" />
-    <Compile Include="Services\KeyboardManagerService.cs" />
     <Compile Include="Services\MeasureToolService.cs" />
     <Compile Include="Services\MouseHighlighterService.cs" />
+    <Compile Include="Services\PastePlainService.cs" />
     <Compile Include="Services\PowerToysRunService.cs" />
     <Compile Include="Services\ShortcutGuideService.cs" />
     <Compile Include="Services\TextExtractorService.cs" />
@@ -199,10 +195,7 @@
     <EmbeddedResource Include="Resources\Icons\icon-32.png" />
     <EmbeddedResource Include="Resources\Icons\icon-48.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Commands\KeyboardManager\" />
-    <Folder Include="Commands\QuickAccent\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Resources\Modules\Awake\off-80.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -249,6 +242,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Modules\TextExtractor\icon-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Modules\PastePlain\icon-80.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

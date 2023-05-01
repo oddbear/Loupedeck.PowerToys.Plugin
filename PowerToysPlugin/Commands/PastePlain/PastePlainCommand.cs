@@ -1,19 +1,19 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.VideoConference;
+using Loupedeck.PowerToysPlugin.Models.PastePlain;
 using Loupedeck.PowerToysPlugin.Services;
 
-namespace Loupedeck.PowerToysPlugin.Commands.VideoConference
+namespace Loupedeck.PowerToysPlugin.Commands.PastePlain
 {
-    class MuteCameraAndMicrophoneCommand : PluginDynamicCommand
+    class PastePlainCommand : PluginDynamicCommand
     {
         private PowerToysPlugin _plugin;
-        private VideoConferenceService _service;
-        private VideoConferenceSettings _currentSettings;
+        private PastePlainService _service;
+        private PastePlainSettings _currentSettings;
 
-        public MuteCameraAndMicrophoneCommand()
-            : base("Toggle Mute Camera & Microphone",
-                "Toggles Mute Camera & Microphone",
-                "VideoConference")
+        public PastePlainCommand()
+            : base("Paste As Plain Text",
+                "Paste As Plain Text",
+                "Paste As Plain Text")
         {
             //
         }
@@ -24,7 +24,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.VideoConference
             if (_plugin is null)
                 return false;
 
-            _service = _plugin.VideoConferenceService;
+            _service = _plugin.PastePlainService;
             if (_service is null)
                 return false;
 
@@ -34,7 +34,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.VideoConference
             return true;
         }
 
-        private void ServiceOnSettingsUpdated(object sender, VideoConferenceSettings e)
+        private void ServiceOnSettingsUpdated(object sender, PastePlainSettings e)
         {
             _currentSettings = e;
             base.ActionImageChanged();
@@ -42,7 +42,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.VideoConference
 
         protected override void RunCommand(string actionParameter)
         {
-            _service.Activate(MuteOptions.CameraMicrophone);
+            _service.Activate();
         }
 
         protected override BitmapImage GetCommandImage(string actionParameter, PluginImageSize imageSize)
@@ -51,7 +51,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.VideoConference
             {
                 bitmapBuilder.Clear(new BitmapColor(0x00, 0x19, 0x7C));
 
-                var path = "Loupedeck.PowerToysPlugin.Resources.Modules.VideoConference.icon-80.png";
+                var path = "Loupedeck.PowerToysPlugin.Resources.Modules.PastePlain.icon-80.png";
 
                 var background = ResourceHelper.GetBackgroundImage(path);
                 bitmapBuilder.SetBackgroundImage(background);
@@ -66,7 +66,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.VideoConference
 
         protected override string GetCommandDisplayName(string actionParameter, PluginImageSize imageSize)
         {
-            return "Mute Camera and Microphone";
+            return "Paste As Plain Text";
         }
     }
 }

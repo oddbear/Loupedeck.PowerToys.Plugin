@@ -18,11 +18,10 @@ namespace Loupedeck.PowerToysPlugin.Services
 
         public void Activate()
         {
-            var settings = GetSettings();
-            if (settings == null)
+            var shortcut = GetProperties<Hotkey>("hotkey")?.Value;
+            if (shortcut == null)
                 return;
-
-            var shortcut = settings.Properties.Hotkey.Value;
+            
             KeyboardHelper.SendKeys(shortcut);
         }
     }

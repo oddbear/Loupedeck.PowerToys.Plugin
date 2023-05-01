@@ -26,11 +26,10 @@ namespace Loupedeck.PowerToysPlugin.Services
 
         public void Activate()
         {
-            var settings = GetSettings();
-            if (settings == null)
+            var shortcut = GetProperties<FancyzonesEditorHotkey>("fancyzones_editor_hotkey")?.Value;
+            if (shortcut == null)
                 return;
-
-            var shortcut = settings.Properties.FancyzonesEditorHotkey.Value;
+            
             KeyboardHelper.SendKeys(shortcut);
         }
     }

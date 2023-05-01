@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 using Loupedeck.PowerToysPlugin.Models;
 
@@ -49,12 +50,14 @@ namespace Loupedeck.PowerToysPlugin.Helpers
             foreach (var key in keys)
             {
                 keybd_event(key, 0, 0, UIntPtr.Zero);
+                Thread.Sleep(10);
             }
 
             //Release keys:
             foreach (var key in keys)
             {
                 keybd_event(key, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+                Thread.Sleep(10);
             }
         }
     }

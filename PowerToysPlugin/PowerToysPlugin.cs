@@ -8,14 +8,13 @@ namespace Loupedeck.PowerToysPlugin
         public AwakeService AwakeService { get; }
         public ColorPickerService ColorPickerService { get; }
         public FancyZonesService FancyZonesService { get; }
-        public KeyboardManagerService KeyboardManagerService { get; }
         public MouseHighlighterService MouseHighlighterService { get; }
+        public PastePlainService PastePlainService { get; }
         public PowerToysRunService PowerToysRunService { get; }
         public ShortcutGuideService ShortcutGuideService { get; }
-#if DEBUG
-        //TODO: Just for testing, marked as deprecated in PowerToys.
+
+        //TODO: Marked as deprecated in PowerToys, remove when it's gone.
         public VideoConferenceService VideoConferenceService { get; }
-#endif
         public MeasureToolService MeasureToolService { get; }
         public TextExtractorService TextExtractorService { get; }
 
@@ -28,13 +27,11 @@ namespace Loupedeck.PowerToysPlugin
             AwakeService = new AwakeService();
             ColorPickerService = new ColorPickerService();
             FancyZonesService = new FancyZonesService();
-            KeyboardManagerService = new KeyboardManagerService();
             MouseHighlighterService = new MouseHighlighterService();
+            PastePlainService = new PastePlainService();
             PowerToysRunService = new PowerToysRunService();
             ShortcutGuideService = new ShortcutGuideService();
-#if DEBUG
             VideoConferenceService = new VideoConferenceService();
-#endif
             MeasureToolService = new MeasureToolService();
             TextExtractorService = new TextExtractorService();
         }
@@ -50,13 +47,11 @@ namespace Loupedeck.PowerToysPlugin
             AwakeService.Dispose();
             ColorPickerService.Dispose();
             FancyZonesService.Dispose();
-            KeyboardManagerService.Dispose();
             MouseHighlighterService.Dispose();
+            PastePlainService.Dispose();
             PowerToysRunService.Dispose();
             ShortcutGuideService.Dispose();
-#if DEBUG
             VideoConferenceService.Dispose();
-#endif
             MeasureToolService.Dispose();
         }
         

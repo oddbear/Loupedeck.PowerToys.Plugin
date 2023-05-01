@@ -7,7 +7,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public abstract class BaseSettingsService<TSettingsModel> : IDisposable
+    public abstract class BaseSettingsService<TSettingsModel> : IDisposable //TODO: No need for TSettingsModel for most commands.
     {
         private readonly string _pathName;
         private readonly FileSystemWatcher _watcher;
@@ -36,7 +36,27 @@ namespace Loupedeck.PowerToysPlugin.Services
                 // If the watcher fails... don't take down Loupedeck.
             }
         }
-        
+
+        public TActivationShortcutModel GetProperties<TActivationShortcutModel>(string activationShortcutPropertyName)
+        {
+            try
+            {
+                var json = GetSettingsString();
+                var jObject = JsonConvert.DeserializeObject<JObject>(json, _serializerSettings);
+                var properties = jObject?["properties"];
+                var shortcut = properties?[activationShortcutPropertyName] as JObject;
+                if (shortcut is null)
+                    return default;
+
+                return shortcut.ToObject<TActivationShortcutModel>();
+            }
+            catch (Exception exception)
+            {
+                Trace.TraceError(exception.Message);
+                return default;
+            }
+        }
+
         public TSettingsModel GetSettings()
         {
             try

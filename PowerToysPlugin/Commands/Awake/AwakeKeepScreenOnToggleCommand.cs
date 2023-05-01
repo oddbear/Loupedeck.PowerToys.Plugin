@@ -40,6 +40,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.Awake
             base.ActionImageChanged();
         }
         
+        //TODO: Broken...
         protected override void RunCommand(string actionParameter)
         {
             if (_currentSettings is null)

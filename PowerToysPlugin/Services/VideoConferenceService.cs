@@ -30,13 +30,12 @@ namespace Loupedeck.PowerToysPlugin.Services
             switch (muteOptions)
             {
                 case MuteOptions.Camera:
-                    return settings.Properties.MuteCameraHotkey.Value;
+                    return GetProperties<MuteCameraHotkey>("mute_camera_hotkey")?.Value;
                 case MuteOptions.Microphone:
-                    return settings.Properties.MuteMicrophoneHotkey.Value;
+                    return GetProperties<MuteMicrophoneHotkey>("mute_microphone_hotkey")?.Value;
                 case MuteOptions.CameraMicrophone:
-                    return settings.Properties.MuteCameraAndMicrophoneHotkey.Value;
                 default:
-                    return settings.Properties.MuteCameraAndMicrophoneHotkey.Value;
+                    return GetProperties<MuteCameraAndMicrophoneHotkey>("mute_camera_and_microphone_hotkey")?.Value;
             }
         }
     }

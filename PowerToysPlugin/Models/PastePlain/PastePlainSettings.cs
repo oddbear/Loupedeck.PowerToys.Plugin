@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace Loupedeck.PowerToysPlugin.Models.KeyboardManager
+namespace Loupedeck.PowerToysPlugin.Models.PastePlain
 {
-    public class KeyboardManagerSettings
+    public class PastePlainSettings
     {
         [JsonProperty("properties")]
         public Properties Properties { get; set; }

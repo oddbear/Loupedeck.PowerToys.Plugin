@@ -4,7 +4,6 @@ using Loupedeck.PowerToysPlugin.Services;
 
 namespace Loupedeck.PowerToysPlugin.Commands.VideoConference
 {
-#if DEBUG
     class MuteMicrophoneCommand : PluginDynamicCommand
     {
         private PowerToysPlugin _plugin;
@@ -70,5 +69,4 @@ namespace Loupedeck.PowerToysPlugin.Commands.VideoConference
             return "Mute Microphone";
         }
     }
-#endif
 }

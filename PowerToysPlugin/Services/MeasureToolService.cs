@@ -1,4 +1,5 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
+using Loupedeck.PowerToysPlugin.Models;
 using Loupedeck.PowerToysPlugin.Models.MeasureTool;
 
 namespace Loupedeck.PowerToysPlugin.Services
@@ -13,11 +14,10 @@ namespace Loupedeck.PowerToysPlugin.Services
 
         public void Activate()
         {
-            var settings = GetSettings();
-            if (settings == null)
+            var shortcut = GetProperties<ActivationShortcut>("ActivationShortcut");
+            if (shortcut == null)
                 return;
-
-            var shortcut = settings.Properties.ActivationShortcut;
+            
             KeyboardHelper.SendKeys(shortcut);
         }
     }

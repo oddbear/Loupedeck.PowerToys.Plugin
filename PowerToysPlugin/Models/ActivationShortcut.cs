@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Loupedeck.PowerToysPlugin.Models.MeasureTool
+namespace Loupedeck.PowerToysPlugin.Models
 {
     public class ActivationShortcut : IKeyboardShortcut
     {
