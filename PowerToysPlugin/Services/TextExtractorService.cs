@@ -1,10 +1,10 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
 using Loupedeck.PowerToysPlugin.Models;
-using Loupedeck.PowerToysPlugin.Models.TextExtractor;
+using Loupedeck.PowerToysPlugin.Services.Shared;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public class TextExtractorService : BaseSettingsService<TextExtractorSettings>
+    public class TextExtractorService : BaseSettingsService
     {
         public TextExtractorService()
             : base("TextExtractor")
@@ -14,7 +14,7 @@ namespace Loupedeck.PowerToysPlugin.Services
 
         public void Activate()
         {
-            var shortcut = GetProperties<ActivationShortcut>("ActivationShortcut");
+            var shortcut = base.GetValue<ActivationShortcut>("properties", "ActivationShortcut");
             if (shortcut == null)
                 return;
             

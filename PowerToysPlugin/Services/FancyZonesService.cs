@@ -1,11 +1,12 @@
 ﻿using System;
 
 using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.FancyZones;
+using Loupedeck.PowerToysPlugin.Models;
+using Loupedeck.PowerToysPlugin.Services.Shared;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public class FancyZonesService : BaseSettingsService<FancyZonesSettings>
+    public class FancyZonesService : BaseSettingsService
     {
         public event EventHandler<bool> IsRunningUpdated;
         public bool IsRunning { get; private set; }
@@ -26,8 +27,8 @@ namespace Loupedeck.PowerToysPlugin.Services
 
         public void Activate()
         {
-            var shortcut = GetProperties<FancyzonesEditorHotkey>("fancyzones_editor_hotkey")?.Value;
-            if (shortcut == null)
+            var shortcut = base.GetValue<ActivationShortcut>("properties", "fancyzones_editor_hotkey", "value");
+            if (shortcut is null)
                 return;
             
             KeyboardHelper.SendKeys(shortcut);

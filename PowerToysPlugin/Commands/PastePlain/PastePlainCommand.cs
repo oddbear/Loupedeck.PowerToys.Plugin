@@ -1,5 +1,4 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.PastePlain;
 using Loupedeck.PowerToysPlugin.Services;
 
 namespace Loupedeck.PowerToysPlugin.Commands.PastePlain
@@ -8,7 +7,6 @@ namespace Loupedeck.PowerToysPlugin.Commands.PastePlain
     {
         private PowerToysPlugin _plugin;
         private PastePlainService _service;
-        private PastePlainSettings _currentSettings;
 
         public PastePlainCommand()
             : base("Paste As Plain Text",
@@ -28,18 +26,9 @@ namespace Loupedeck.PowerToysPlugin.Commands.PastePlain
             if (_service is null)
                 return false;
 
-            _currentSettings = _service.GetSettings();
-            _service.SettingsUpdated += ServiceOnSettingsUpdated;
-
             return true;
         }
-
-        private void ServiceOnSettingsUpdated(object sender, PastePlainSettings e)
-        {
-            _currentSettings = e;
-            base.ActionImageChanged();
-        }
-
+        
         protected override void RunCommand(string actionParameter)
         {
             _service.Activate();

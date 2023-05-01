@@ -43,16 +43,6 @@ namespace Loupedeck.PowerToysPlugin
 
         public override void Unload()
         {
-            AlwaysOnTopService.Dispose();
-            AwakeService.Dispose();
-            ColorPickerService.Dispose();
-            FancyZonesService.Dispose();
-            MouseHighlighterService.Dispose();
-            PastePlainService.Dispose();
-            PowerToysRunService.Dispose();
-            ShortcutGuideService.Dispose();
-            VideoConferenceService.Dispose();
-            MeasureToolService.Dispose();
         }
         
         public override void RunCommand(string commandName, string parameter)

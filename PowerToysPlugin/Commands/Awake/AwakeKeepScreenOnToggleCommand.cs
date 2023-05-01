@@ -1,5 +1,4 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.Awake;
 using Loupedeck.PowerToysPlugin.Services;
 
 namespace Loupedeck.PowerToysPlugin.Commands.Awake
@@ -8,7 +7,6 @@ namespace Loupedeck.PowerToysPlugin.Commands.Awake
     {
         private PowerToysPlugin _plugin;
         private AwakeService _service;
-        private AwakeSettings _currentSettings;
 
         public AwakeKeepScreenOnToggleCommand()
             : base("Toggle Keep screen on",
@@ -27,40 +25,24 @@ namespace Loupedeck.PowerToysPlugin.Commands.Awake
             _service = _plugin.AwakeService;
             if (_service is null)
                 return false;
-
-            _currentSettings = _service.GetSettings();
-            _service.SettingsUpdated += AwakeServiceOnSettingsUpdated;
+            
+            _service.KeepDisplayOn_ChangedEvent += base.ActionImageChanged;
 
             return true;
         }
-
-        private void AwakeServiceOnSettingsUpdated(object sender, AwakeSettings e)
-        {
-            _currentSettings = e;
-            base.ActionImageChanged();
-        }
         
-        //TODO: Broken...
         protected override void RunCommand(string actionParameter)
         {
-            if (_currentSettings is null)
-                return;
-
-            _currentSettings.Properties.AwakeKeepDisplayOn = !_currentSettings.Properties.AwakeKeepDisplayOn;
-            _service.UpdateSettings(_currentSettings);
-            base.ActionImageChanged();
+            _service.Toggle();
         }
 
         protected override BitmapImage GetCommandImage(string actionParameter, PluginImageSize imageSize)
         {
-            if (_currentSettings is null)
-                return null;
-
             using (var bitmapBuilder = new BitmapBuilder(imageSize))
             {
                 bitmapBuilder.Clear(new BitmapColor(0x00, 0x19, 0x7C));
 
-                var path = _currentSettings.Properties.AwakeKeepDisplayOn
+                var path = _service.KeepDisplayOnState()
                     ? "Loupedeck.PowerToysPlugin.Resources.Modules.Awake.on-80.png"
                     : "Loupedeck.PowerToysPlugin.Resources.Modules.Awake.off-80.png";
 
@@ -77,7 +59,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.Awake
 
         protected override string GetCommandDisplayName(string actionParameter, PluginImageSize imageSize)
         {
-            var state = _currentSettings.Properties.AwakeKeepDisplayOn ? "On" : "Off";
+            var state = _service.KeepDisplayOnState() ? "On" : "Off";
             return $"Awake: {state}";
         }
     }

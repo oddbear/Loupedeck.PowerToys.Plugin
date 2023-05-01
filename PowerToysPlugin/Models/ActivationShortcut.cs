@@ -2,7 +2,7 @@
 
 namespace Loupedeck.PowerToysPlugin.Models
 {
-    public class ActivationShortcut : IKeyboardShortcut
+    public class ActivationShortcut
     {
         [JsonProperty("win")]
         public bool Win { get; set; }

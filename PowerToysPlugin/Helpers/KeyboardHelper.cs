@@ -20,7 +20,7 @@ namespace Loupedeck.PowerToysPlugin.Helpers
         [DllImport("user32.dll")]
         static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, UIntPtr dwExtraInfo);
 
-        public static void SendKeys(IKeyboardShortcut shortcut)
+        public static void SendKeys(ActivationShortcut shortcut)
         {
             if (shortcut is null)
                 return;

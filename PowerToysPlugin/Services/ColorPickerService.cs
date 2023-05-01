@@ -1,10 +1,10 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
 using Loupedeck.PowerToysPlugin.Models;
-using Loupedeck.PowerToysPlugin.Models.ColorPicker;
+using Loupedeck.PowerToysPlugin.Services.Shared;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public class ColorPickerService : BaseSettingsService<ColorPickerSettings>
+    public class ColorPickerService : BaseSettingsService
     {
         public ColorPickerService()
             : base("ColorPicker")
@@ -15,8 +15,8 @@ namespace Loupedeck.PowerToysPlugin.Services
 
         public void Activate()
         {
-            var shortcut = GetProperties<ActivationShortcut>("ActivationShortcut");
-            if (shortcut == null)
+            var shortcut = base.GetValue<ActivationShortcut>("properties", "ActivationShortcut");
+            if (shortcut is null)
                 return;
             
             KeyboardHelper.SendKeys(shortcut);

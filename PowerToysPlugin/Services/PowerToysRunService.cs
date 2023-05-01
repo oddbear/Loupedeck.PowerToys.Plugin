@@ -1,24 +1,20 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.PowerToysRun;
+using Loupedeck.PowerToysPlugin.Models;
+using Loupedeck.PowerToysPlugin.Services.Shared;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public class PowerToysRunService : BaseSettingsService<PowerToysRunSettings>
+    public class PowerToysRunService : BaseSettingsService
     {
         public PowerToysRunService()
             : base("PowerToys Run")
         {
-            ProcessHelper.Register("PowerToys.PowerLauncher", ProcessIsRunning);
+            //
         }
-
-        private void ProcessIsRunning(bool isRunning)
-        {
-            //TODO: Implement.
-        }
-
+        
         public void Activate()
         {
-            var shortcut = GetProperties<OpenPowerlauncher>("open_powerlauncher");
+            var shortcut = base.GetValue<ActivationShortcut>("properties", "open_powerlauncher");
             if (shortcut == null)
                 return;
             

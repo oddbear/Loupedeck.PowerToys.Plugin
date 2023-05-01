@@ -1,25 +1,21 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.AlwaysOnTop;
+using Loupedeck.PowerToysPlugin.Models;
+using Loupedeck.PowerToysPlugin.Services.Shared;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public class AlwaysOnTopService : BaseSettingsService<AlwaysOnTopSettings>
+    public class AlwaysOnTopService : BaseSettingsService
     {
         public AlwaysOnTopService()
             : base("AlwaysOnTop")
         {
-            ProcessHelper.Register("PowerToys.AlwaysOnTop", ProcessIsRunning);
+            //
         }
-
-        private void ProcessIsRunning(bool isRunning)
-        {
-            //TODO: Implement.
-        }
-
+        
         public void Activate()
         {
-            var shortcut = GetProperties<Hotkey>("hotkey")?.Value;
-            if (shortcut == null)
+            var shortcut = base.GetValue<ActivationShortcut>("properties", "hotkey", "value");
+            if (shortcut is null)
                 return;
             
             KeyboardHelper.SendKeys(shortcut);

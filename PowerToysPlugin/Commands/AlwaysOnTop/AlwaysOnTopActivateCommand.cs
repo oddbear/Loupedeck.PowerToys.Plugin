@@ -1,5 +1,4 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.AlwaysOnTop;
 using Loupedeck.PowerToysPlugin.Services;
 
 namespace Loupedeck.PowerToysPlugin.Commands.AlwaysOnTop
@@ -8,7 +7,6 @@ namespace Loupedeck.PowerToysPlugin.Commands.AlwaysOnTop
     {
         private PowerToysPlugin _plugin;
         private AlwaysOnTopService _service;
-        private AlwaysOnTopSettings _currentSettings;
 
         public AlwaysOnTopActivateCommand()
             : base("Activate Always On Top",
@@ -27,9 +25,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.AlwaysOnTop
             _service = _plugin.AlwaysOnTopService;
             if (_service is null)
                 return false;
-
-            _currentSettings = _service.GetSettings();
-
+            
             return true;
         }
         

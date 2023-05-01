@@ -1,10 +1,10 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
 using Loupedeck.PowerToysPlugin.Models;
-using Loupedeck.PowerToysPlugin.Models.MouseHighlighter;
+using Loupedeck.PowerToysPlugin.Services.Shared;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public class MouseHighlighterService : BaseSettingsService<MouseHighlighterSettings>
+    public class MouseHighlighterService : BaseSettingsService
     {
         public MouseHighlighterService()
             : base("MouseHighlighter")
@@ -14,7 +14,7 @@ namespace Loupedeck.PowerToysPlugin.Services
 
         public void Activate()
         {
-            var shortcut = GetProperties<ActivationShortcut>("activation_shortcut");
+            var shortcut = base.GetValue<ActivationShortcut>("properties", "activation_shortcut");
             if (shortcut == null)
                 return;
             

@@ -1,10 +1,10 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
 using Loupedeck.PowerToysPlugin.Models;
-using Loupedeck.PowerToysPlugin.Models.MeasureTool;
+using Loupedeck.PowerToysPlugin.Services.Shared;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public class MeasureToolService : BaseSettingsService<MeasureToolSettings>
+    public class MeasureToolService : BaseSettingsService
     {
         public MeasureToolService()
             : base("Measure Tool")
@@ -14,8 +14,8 @@ namespace Loupedeck.PowerToysPlugin.Services
 
         public void Activate()
         {
-            var shortcut = GetProperties<ActivationShortcut>("ActivationShortcut");
-            if (shortcut == null)
+            var shortcut = base.GetValue<ActivationShortcut>("properties", "ActivationShortcut");
+            if (shortcut is null)
                 return;
             
             KeyboardHelper.SendKeys(shortcut);
