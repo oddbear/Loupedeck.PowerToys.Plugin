@@ -46,18 +46,22 @@ namespace Loupedeck.PowerToysPlugin.Helpers
 
         private static void SendKeys(IReadOnlyCollection<byte> keys)
         {
+            //Tens ms seems to work fine, if not the keyboard might hang the keys.
+            // (seems to happen when 4 keys are presses, not on 3 or less).
+            var waitTime = TimeSpan.FromMilliseconds(10);
+
             //Set keys:
             foreach (var key in keys)
             {
                 keybd_event(key, 0, 0, UIntPtr.Zero);
-                Thread.Sleep(10);
+                Thread.Sleep(waitTime);
             }
 
             //Release keys:
             foreach (var key in keys)
             {
                 keybd_event(key, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
-                Thread.Sleep(10);
+                Thread.Sleep(waitTime);
             }
         }
     }

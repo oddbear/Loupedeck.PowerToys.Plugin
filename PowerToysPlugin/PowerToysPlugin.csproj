@@ -35,8 +35,8 @@
     <OutputPath>..\..\bin\PowerToysPlugin\bin\win\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PluginApi, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -55,6 +55,8 @@
   <ItemGroup>
     <Compile Include="Commands\Awake\AwakeKeepScreenOnToggleCommand.cs" />
     <Compile Include="Commands\AlwaysOnTop\AlwaysOnTopActivateCommand.cs" />
+    <Compile Include="Commands\FancyZones\FancyZonesPrevWindowCommand.cs" />
+    <Compile Include="Commands\FancyZones\FancyZonesNextWindowCommand.cs" />
     <Compile Include="Commands\FancyZones\FancyZonesActivateCommand.cs" />
     <Compile Include="Commands\MeasureTool\MeasureToolCommand.cs" />
     <Compile Include="Commands\MouseHighlighter\MouseHighlighterActivateCommand.cs" />
@@ -100,7 +102,14 @@
     <EmbeddedResource Include="Resources\Icons\icon-32.png" />
     <EmbeddedResource Include="Resources\Icons\icon-48.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Modules\FancyZones\next-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Modules\FancyZones\prev-80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Modules\Awake\off-80.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

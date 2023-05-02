@@ -33,5 +33,23 @@ namespace Loupedeck.PowerToysPlugin.Services
             
             KeyboardHelper.SendKeys(shortcut);
         }
+
+        public void NextWindow()
+        {
+            var shortcut = base.GetValue<ActivationShortcut>("properties", "fancyzones_nextTab_hotkey", "value");
+            if (shortcut is null)
+                return;
+
+            KeyboardHelper.SendKeys(shortcut);
+        }
+
+        public void PrevWindow()
+        {
+            var shortcut = base.GetValue<ActivationShortcut>("properties", "fancyzones_prevTab_hotkey", "value");
+            if (shortcut is null)
+                return;
+
+            KeyboardHelper.SendKeys(shortcut);
+        }
     }
 }
