@@ -1,17 +1,17 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
 using Loupedeck.PowerToysPlugin.Services;
 
-namespace Loupedeck.PowerToysPlugin.Commands.Awake
+namespace Loupedeck.PowerToysPlugin.Commands.FancyZones
 {
-    class AwakeKeepScreenOnToggleCommand : PluginDynamicCommand
+    class FancyZonesPrevWindowCommand : PluginDynamicCommand
     {
         private PowerToysPlugin _plugin;
-        private AwakeService _service;
+        private FancyZonesService _service;
 
-        public AwakeKeepScreenOnToggleCommand()
-            : base("Toggle Keep screen on",
-                "Toggles Keep screen on",
-                "Awake")
+        public FancyZonesPrevWindowCommand()
+            : base("Prev Window",
+                "Presses the assigned keyboard shortcuts to prev window.",
+                "Fancy Zones")
         {
             //
         }
@@ -22,18 +22,23 @@ namespace Loupedeck.PowerToysPlugin.Commands.Awake
             if (_plugin is null)
                 return false;
 
-            _service = _plugin.AwakeService;
+            _service = _plugin.FancyZonesService;
             if (_service is null)
                 return false;
             
-            _service.KeepDisplayOn_ChangedEvent += base.ActionImageChanged;
+            _service.IsRunningUpdated += ServiceOnIsRunningUpdated;
 
             return true;
         }
-        
+
+        private void ServiceOnIsRunningUpdated(object sender, bool e)
+        {
+            base.ActionImageChanged();
+        }
+
         protected override void RunCommand(string actionParameter)
         {
-            _service.Toggle();
+            _service.PrevWindow();
         }
 
         protected override BitmapImage GetCommandImage(string actionParameter, PluginImageSize imageSize)
@@ -42,9 +47,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.Awake
             {
                 bitmapBuilder.Clear(new BitmapColor(0x00, 0x19, 0x7C));
 
-                var path = _service.KeepDisplayOnState()
-                    ? "Loupedeck.PowerToysPlugin.Resources.Modules.Awake.on-80.png"
-                    : "Loupedeck.PowerToysPlugin.Resources.Modules.Awake.off-80.png";
+                var path = "Loupedeck.PowerToysPlugin.Resources.Modules.FancyZones.prev-80.png";
 
                 var background = ResourceHelper.GetBackgroundImage(path);
                 bitmapBuilder.SetBackgroundImage(background);
@@ -59,8 +62,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.Awake
 
         protected override string GetCommandDisplayName(string actionParameter, PluginImageSize imageSize)
         {
-            var state = _service.KeepDisplayOnState() ? "On" : "Off";
-            return $"Awake: {state}";
+            return "Prev Window";
         }
     }
 }

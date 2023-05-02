@@ -8,11 +8,15 @@ namespace Loupedeck.PowerToysPlugin
         public AwakeService AwakeService { get; }
         public ColorPickerService ColorPickerService { get; }
         public FancyZonesService FancyZonesService { get; }
-        public KeyboardManagerService KeyboardManagerService { get; }
         public MouseHighlighterService MouseHighlighterService { get; }
+        public PastePlainService PastePlainService { get; }
         public PowerToysRunService PowerToysRunService { get; }
         public ShortcutGuideService ShortcutGuideService { get; }
+
+        //TODO: Marked as deprecated in PowerToys, remove when it's gone.
         public VideoConferenceService VideoConferenceService { get; }
+        public MeasureToolService MeasureToolService { get; }
+        public TextExtractorService TextExtractorService { get; }
 
         public override bool HasNoApplication => true;
         public override bool UsesApplicationApiOnly => true;
@@ -23,11 +27,13 @@ namespace Loupedeck.PowerToysPlugin
             AwakeService = new AwakeService();
             ColorPickerService = new ColorPickerService();
             FancyZonesService = new FancyZonesService();
-            KeyboardManagerService = new KeyboardManagerService();
             MouseHighlighterService = new MouseHighlighterService();
+            PastePlainService = new PastePlainService();
             PowerToysRunService = new PowerToysRunService();
             ShortcutGuideService = new ShortcutGuideService();
             VideoConferenceService = new VideoConferenceService();
+            MeasureToolService = new MeasureToolService();
+            TextExtractorService = new TextExtractorService();
         }
 
         public override void Load()
@@ -37,15 +43,6 @@ namespace Loupedeck.PowerToysPlugin
 
         public override void Unload()
         {
-            AlwaysOnTopService.Dispose();
-            AwakeService.Dispose();
-            ColorPickerService.Dispose();
-            FancyZonesService.Dispose();
-            KeyboardManagerService.Dispose();
-            MouseHighlighterService.Dispose();
-            PowerToysRunService.Dispose();
-            ShortcutGuideService.Dispose();
-            VideoConferenceService.Dispose();
         }
         
         public override void RunCommand(string commandName, string parameter)

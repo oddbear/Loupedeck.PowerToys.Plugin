@@ -1,11 +1,12 @@
 ﻿using System;
 
 using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.FancyZones;
+using Loupedeck.PowerToysPlugin.Models;
+using Loupedeck.PowerToysPlugin.Services.Shared;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public class FancyZonesService : BaseSettingsService<FancyZonesSettings>
+    public class FancyZonesService : BaseSettingsService
     {
         public event EventHandler<bool> IsRunningUpdated;
         public bool IsRunning { get; private set; }
@@ -26,11 +27,28 @@ namespace Loupedeck.PowerToysPlugin.Services
 
         public void Activate()
         {
-            var settings = GetSettings();
-            if (settings == null)
+            var shortcut = base.GetValue<ActivationShortcut>("properties", "fancyzones_editor_hotkey", "value");
+            if (shortcut is null)
+                return;
+            
+            KeyboardHelper.SendKeys(shortcut);
+        }
+
+        public void NextWindow()
+        {
+            var shortcut = base.GetValue<ActivationShortcut>("properties", "fancyzones_nextTab_hotkey", "value");
+            if (shortcut is null)
                 return;
 
-            var shortcut = settings.Properties.FancyzonesEditorHotkey.Value;
+            KeyboardHelper.SendKeys(shortcut);
+        }
+
+        public void PrevWindow()
+        {
+            var shortcut = base.GetValue<ActivationShortcut>("properties", "fancyzones_prevTab_hotkey", "value");
+            if (shortcut is null)
+                return;
+
             KeyboardHelper.SendKeys(shortcut);
         }
     }

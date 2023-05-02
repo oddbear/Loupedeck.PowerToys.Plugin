@@ -4,13 +4,12 @@ using Loupedeck.PowerToysPlugin.Services.Shared;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public class ColorPickerService : BaseSettingsService
+    public class MeasureToolService : BaseSettingsService
     {
-        public ColorPickerService()
-            : base("ColorPicker")
+        public MeasureToolService()
+            : base("Measure Tool")
         {
-            //"C:\Users\oddbj\AppData\Local\Microsoft\PowerToys\ColorPicker\settings.json" Contains key presses to execute.
-            //"C:\Program Files\PowerToys\modules\ColorPicker\PowerToys.ColorPickerUI.exe"
+            //
         }
 
         public void Activate()

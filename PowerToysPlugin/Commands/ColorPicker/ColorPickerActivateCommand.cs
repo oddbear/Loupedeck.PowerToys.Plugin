@@ -1,5 +1,4 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.ColorPicker;
 using Loupedeck.PowerToysPlugin.Services;
 
 namespace Loupedeck.PowerToysPlugin.Commands.ColorPicker
@@ -8,7 +7,6 @@ namespace Loupedeck.PowerToysPlugin.Commands.ColorPicker
     {
         private PowerToysPlugin _plugin;
         private ColorPickerService _service;
-        private ColorPickerSettings _currentSettings;
 
         public ColorPickerActivateCommand()
             : base("Activate ColorPicker",
@@ -27,9 +25,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.ColorPicker
             _service = _plugin.ColorPickerService;
             if (_service is null)
                 return false;
-
-            _currentSettings = _service.GetSettings();
-
+            
             return true;
         }
         

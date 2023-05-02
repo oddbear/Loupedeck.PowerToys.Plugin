@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Loupedeck.PowerToysPlugin.Helpers
+﻿namespace Loupedeck.PowerToysPlugin.Helpers
 {
     public static class LogAnalyzerHelper
     {

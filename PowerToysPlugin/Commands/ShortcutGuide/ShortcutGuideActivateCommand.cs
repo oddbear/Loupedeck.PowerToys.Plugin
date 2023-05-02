@@ -1,5 +1,4 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.ShortcutGuide;
 using Loupedeck.PowerToysPlugin.Services;
 
 namespace Loupedeck.PowerToysPlugin.Commands.ShortcutGuide
@@ -8,7 +7,6 @@ namespace Loupedeck.PowerToysPlugin.Commands.ShortcutGuide
     {
         private PowerToysPlugin _plugin;
         private ShortcutGuideService _service;
-        private ShortcutGuideSettings _currentSettings;
 
         public ShortcutGuideActivateCommand()
             : base("Open Shortcut Guide",
@@ -27,9 +25,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.ShortcutGuide
             _service = _plugin.ShortcutGuideService;
             if (_service is null)
                 return false;
-
-            _currentSettings = _service.GetSettings();
-
+            
             return true;
         }
         

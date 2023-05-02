@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 using Loupedeck.PowerToysPlugin.Models;
 
@@ -19,7 +20,7 @@ namespace Loupedeck.PowerToysPlugin.Helpers
         [DllImport("user32.dll")]
         static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, UIntPtr dwExtraInfo);
 
-        public static void SendKeys(IKeyboardShortcut shortcut)
+        public static void SendKeys(ActivationShortcut shortcut)
         {
             if (shortcut is null)
                 return;
@@ -45,16 +46,22 @@ namespace Loupedeck.PowerToysPlugin.Helpers
 
         private static void SendKeys(IReadOnlyCollection<byte> keys)
         {
+            //Tens ms seems to work fine, if not the keyboard might hang the keys.
+            // (seems to happen when 4 keys are presses, not on 3 or less).
+            var waitTime = TimeSpan.FromMilliseconds(10);
+
             //Set keys:
             foreach (var key in keys)
             {
                 keybd_event(key, 0, 0, UIntPtr.Zero);
+                Thread.Sleep(waitTime);
             }
 
             //Release keys:
             foreach (var key in keys)
             {
                 keybd_event(key, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+                Thread.Sleep(waitTime);
             }
         }
     }

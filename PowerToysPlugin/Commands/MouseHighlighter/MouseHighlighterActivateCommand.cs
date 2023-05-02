@@ -1,5 +1,4 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.MouseHighlighter;
 using Loupedeck.PowerToysPlugin.Services;
 
 namespace Loupedeck.PowerToysPlugin.Commands.MouseHighlighter
@@ -8,7 +7,6 @@ namespace Loupedeck.PowerToysPlugin.Commands.MouseHighlighter
     {
         private PowerToysPlugin _plugin;
         private MouseHighlighterService _service;
-        private MouseHighlighterSettings _currentSettings;
 
         public MouseHighlighterActivateCommand()
             : base("Activate Mouse Clicks",
@@ -27,9 +25,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.MouseHighlighter
             _service = _plugin.MouseHighlighterService;
             if (_service is null)
                 return false;
-
-            _currentSettings = _service.GetSettings();
-
+            
             return true;
         }
         

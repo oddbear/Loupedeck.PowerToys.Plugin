@@ -1,9 +1,10 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.ShortcutGuide;
+using Loupedeck.PowerToysPlugin.Models;
+using Loupedeck.PowerToysPlugin.Services.Shared;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public class ShortcutGuideService : BaseSettingsService<ShortcutGuideSettings>
+    public class ShortcutGuideService : BaseSettingsService
     {
         public ShortcutGuideService()
             : base("Shortcut Guide")
@@ -13,11 +14,10 @@ namespace Loupedeck.PowerToysPlugin.Services
 
         public void Activate()
         {
-            var settings = GetSettings();
-            if (settings == null)
+            var shortcut = base.GetValue<ActivationShortcut>("properties", "open_shortcutguide");
+            if (shortcut == null)
                 return;
-
-            var shortcut = settings.Properties.OpenShortcutguide;
+            
             KeyboardHelper.SendKeys(shortcut);
         }
     }

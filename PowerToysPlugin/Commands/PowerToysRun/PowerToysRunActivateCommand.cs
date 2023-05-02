@@ -1,5 +1,4 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.PowerToysRun;
 using Loupedeck.PowerToysPlugin.Services;
 
 namespace Loupedeck.PowerToysPlugin.Commands.PowerToysRun
@@ -8,7 +7,6 @@ namespace Loupedeck.PowerToysPlugin.Commands.PowerToysRun
     {
         private PowerToysPlugin _plugin;
         private PowerToysRunService _service;
-        private PowerToysRunSettings _currentSettings;
 
         public PowerToysRunActivateCommand()
             : base("Open Launcher",
@@ -27,9 +25,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.PowerToysRun
             _service = _plugin.PowerToysRunService;
             if (_service is null)
                 return false;
-
-            _currentSettings = _service.GetSettings();
-
+            
             return true;
         }
         

@@ -1,5 +1,4 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
-using Loupedeck.PowerToysPlugin.Models.FancyZones;
 using Loupedeck.PowerToysPlugin.Services;
 
 namespace Loupedeck.PowerToysPlugin.Commands.FancyZones
@@ -8,7 +7,6 @@ namespace Loupedeck.PowerToysPlugin.Commands.FancyZones
     {
         private PowerToysPlugin _plugin;
         private FancyZonesService _service;
-        private FancyZonesSettings _currentSettings;
 
         public FancyZonesActivateCommand()
             : base("Open Layout Editor",
@@ -27,8 +25,7 @@ namespace Loupedeck.PowerToysPlugin.Commands.FancyZones
             _service = _plugin.FancyZonesService;
             if (_service is null)
                 return false;
-
-            _currentSettings = _service.GetSettings();
+            
             _service.IsRunningUpdated += ServiceOnIsRunningUpdated;
 
             return true;

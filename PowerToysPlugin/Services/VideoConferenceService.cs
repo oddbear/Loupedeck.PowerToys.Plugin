@@ -1,10 +1,10 @@
 ﻿using Loupedeck.PowerToysPlugin.Helpers;
 using Loupedeck.PowerToysPlugin.Models;
-using Loupedeck.PowerToysPlugin.Models.VideoConference;
+using Loupedeck.PowerToysPlugin.Services.Shared;
 
 namespace Loupedeck.PowerToysPlugin.Services
 {
-    public class VideoConferenceService : BaseSettingsService<VideoConferenceSettings>
+    public class VideoConferenceService : BaseSettingsService
     {
         public VideoConferenceService()
             : base("Video Conference")
@@ -21,20 +21,17 @@ namespace Loupedeck.PowerToysPlugin.Services
             KeyboardHelper.SendKeys(shortcut);
         }
 
-        private IKeyboardShortcut GetMuteShortcuts(MuteOptions muteOptions)
+        private ActivationShortcut GetMuteShortcuts(MuteOptions muteOptions)
         {
-            var settings = GetSettings();
-            if (settings == null)
-                return null;
-
             switch (muteOptions)
             {
                 case MuteOptions.Camera:
-                    return settings.Properties.MuteCameraHotkey.Value;
+                    return base.GetValue<ActivationShortcut>("properties", "mute_camera_hotkey", "value");
                 case MuteOptions.Microphone:
-                    return settings.Properties.MuteMicrophoneHotkey.Value;
+                    return base.GetValue<ActivationShortcut>("properties", "mute_microphone_hotkey", "value");
+                case MuteOptions.CameraMicrophone:
                 default:
-                    return settings.Properties.MuteCameraAndMicrophoneHotkey.Value;
+                    return base.GetValue<ActivationShortcut>("properties", "mute_camera_and_microphone_hotkey", "value");
             }
         }
     }
@@ -42,6 +39,7 @@ namespace Loupedeck.PowerToysPlugin.Services
     public enum MuteOptions
     {
         Camera,
-        Microphone
+        Microphone,
+        CameraMicrophone
     }
 }
