@@ -19,7 +19,7 @@ namespace Loupedeck.PowerToysPlugin.Services
             var directory = Path.GetDirectoryName(location);
             var fileName = Path.GetFileName(location);
 
-            if (directory != null)
+            if (Directory.Exists(directory))
             {
                 _watcher = new FileSystemWatcher(directory, fileName);
                 _watcher.EnableRaisingEvents = true;
